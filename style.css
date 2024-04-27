@@ -8,3 +8,17 @@
     font-weight: 400;
     font-style: normal;
   }
+.btn-custom {
+    background-color: black;
+    color: white;
+}
+
+  
+  .carousel-item {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .c-item {
+    position: relative;
+  }
