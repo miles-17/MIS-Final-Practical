@@ -36,3 +36,19 @@ function createShowAllButton() {
   var form = document.querySelector("form");
   form.appendChild(showAllButton);
 }
+function showAll() {
+  display(allResults);
+  var showAllButton = document.getElementById("showAllButton");
+  showAllButton.parentNode.removeChild(showAllButton);
+}
+
+function display(items) {
+  var oldContent = document.getElementById("content_holder");
+  oldContent.textContent = "";
+
+  for (var i = 0; i < items.length; i++) {
+    var newDiv = document.createElement("div");
+    newDiv.innerHTML = `<div class="card mb-3" style="max-width: 1300px; margin: 0 auto"><div class="row g-0"><div class="col-md-4"><img src="${items[i].strMealThumb}" class="img-fluid rounded-start" alt="..." style="object-fit: cover; width: 100%; height: 100%"/></div><div class="col-md-8"><div class="card-body"><h5 class="card-title">${items[i].strMeal}</h5><p class="card-text">${items[i].strInstructions}</p><p class="card-body"><small class="text-body-secondary">ID: ${items[i].idMeal}, Category: ${items[i].strCategory}</small></p></div></div></div></div>`;
+    oldContent.appendChild(newDiv);
+  }
+}
