@@ -26,3 +26,13 @@ function connect() {
 
   console.log("Button clicked");
 }
+function createShowAllButton() {
+  var showAllButton = document.createElement("button");
+  showAllButton.textContent = "Show All";
+  showAllButton.id = "showAllButton";
+  showAllButton.classList.add("btn", "btn-lg", "btn-success", "btn-custom");
+  showAllButton.addEventListener("click", showAll);
+
+  var form = document.querySelector("form");
+  form.appendChild(showAllButton);
+}
